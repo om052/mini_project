@@ -1,0 +1,319 @@
+/* Fitness Messer - Kingdom Map Page Styles */
+@import url('../global.css');
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: var(--bg-primary, #0a0e27);
+}
+
+.map-sidebar {
+  background: var(--bg-panel, #11142a);
+  border-right: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-lg, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl, 2rem);
+}
+
+.map-main {
+  padding: var(--space-xl, 2rem);
+  overflow-x: auto;
+}
+
+.map-header {
+  margin-bottom: var(--space-xl, 2rem);
+}
+
+.map-header h1 {
+  color: var(--text-primary, #ffffff);
+  font-size: 2rem;
+  margin: 0 0 var(--space-xs, 0.5rem) 0;
+  font-family: 'Cinzel', serif;
+}
+
+.map-header p {
+  color: var(--text-secondary, #a0a0a0);
+  margin: 0;
+}
+
+.map-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl, 2rem);
+  margin-bottom: var(--space-xl, 2rem);
+}
+
+.map-canvas {
+  background: linear-gradient(135deg, #0a1428 0%, #0a0e27 100%);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-xl, 2rem);
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 255, 128, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.map-title {
+  text-align: center;
+  color: var(--accent-gold, #d4af37);
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xl, 2rem);
+  position: relative;
+  z-index: 1;
+}
+
+.territories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md, 1rem);
+  position: relative;
+  z-index: 1;
+}
+
+.territory-marker {
+  background: var(--bg-panel, #11142a);
+  border: 2px solid var(--border-color, #1a1f3a);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-md, 1rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.territory-marker:hover {
+  border-color: var(--accent-cyan, #00d4ff);
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
+}
+
+.territory-marker.selected {
+  border-color: var(--accent-gold, #d4af37);
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+}
+
+.territory-marker.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.territory-marker.locked:hover {
+  transform: none;
+  border-color: var(--border-color, #1a1f3a);
+  box-shadow: none;
+}
+
+.territory-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-xs, 0.5rem);
+  display: block;
+}
+
+.territory-name {
+  color: var(--text-primary, #ffffff);
+  font-weight: 600;
+  margin: 0 0 var(--space-xs, 0.25rem) 0;
+  font-size: 0.875rem;
+}
+
+.territory-status {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.status-free {
+  background: rgba(0, 255, 128, 0.2);
+  color: var(--fitness-green, #00ff88);
+}
+
+.status-claimed {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--accent-gold, #d4af37);
+}
+
+.status-locked {
+  background: rgba(160, 160, 160, 0.2);
+  color: var(--text-secondary, #a0a0a0);
+}
+
+.territory-details {
+  background: var(--bg-panel, #11142a);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-lg, 1.5rem);
+}
+
+.details-header {
+  margin-bottom: var(--space-lg, 1.5rem);
+  padding-bottom: var(--space-md, 1rem);
+  border-bottom: 1px solid var(--border-color, #1a1f3a);
+}
+
+.details-header h3 {
+  color: var(--accent-gold, #d4af37);
+  margin: 0 0 var(--space-xs, 0.5rem) 0;
+  font-family: 'Cinzel', serif;
+}
+
+.details-header .demo-badge {
+  display: inline-block;
+  background: rgba(255, 165, 0, 0.2);
+  color: orange;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 1rem);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm, 0.75rem);
+  background: var(--bg-secondary, #0f1328);
+  border-radius: var(--radius-md, 8px);
+}
+
+.detail-label {
+  color: var(--text-secondary, #a0a0a0);
+}
+
+.detail-value {
+  color: var(--text-primary, #ffffff);
+  font-weight: 500;
+}
+
+.details-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 0.5rem);
+  margin-top: var(--space-lg, 1.5rem);
+}
+
+.btn-action {
+  padding: var(--space-sm, 0.75rem);
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-inspect {
+  background: var(--bg-secondary, #0f1328);
+  color: var(--text-primary, #ffffff);
+  border: 1px solid var(--border-color, #1a1f3a);
+}
+
+.btn-inspect:hover {
+  border-color: var(--accent-cyan, #00d4ff);
+  color: var(--accent-cyan, #00d4ff);
+}
+
+.btn-visit {
+  background: var(--bg-secondary, #0f1328);
+  color: var(--text-primary, #ffffff);
+  border: 1px solid var(--border-color, #1a1f3a);
+}
+
+.btn-visit:hover {
+  border-color: var(--fitness-green, #00ff88);
+  color: var(--fitness-green, #00ff88);
+}
+
+.btn-join {
+  background: linear-gradient(135deg, var(--accent-gold, #d4af37), #b8860b);
+  color: var(--bg-primary, #0a0e27);
+}
+
+.btn-join:hover {
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.btn-join:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.transaction-feedback {
+  margin-top: var(--space-md, 1rem);
+  padding: var(--space-sm, 0.75rem);
+  border-radius: var(--radius-md, 8px);
+  text-align: center;
+  font-weight: 500;
+}
+
+.feedback-success {
+  background: rgba(0, 255, 128, 0.2);
+  color: var(--fitness-green, #00ff88);
+  border: 1px solid var(--fitness-green, #00ff88);
+}
+
+.feedback-error {
+  background: rgba(255, 69, 58, 0.2);
+  color: #ff453a;
+  border: 1px solid #ff453a;
+}
+
+.demo-notice {
+  text-align: center;
+  padding: var(--space-md, 1rem);
+  background: rgba(255, 165, 0, 0.1);
+  border: 1px solid orange;
+  border-radius: var(--radius-md, 8px);
+  color: orange;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 968px) {
+  .map-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-sidebar {
+    display: none;
+  }
+  
+  .map-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .territories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .map-main {
+    padding: var(--space-md, 1rem);
+  }
+  
+  .territories-grid {
+    grid-template-columns: 1fr;
+  }
+}

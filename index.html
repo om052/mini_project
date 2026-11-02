@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Messer - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-logo">
+                <h2>Fitness Messer</h2>
+                <p>Let's Build Empire With Exercise</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-link active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="pages/kingdom-map.html" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    <span>Kingdom Map</span>
+                </a>
+                <a href="pages/kingdom-view.html" class="nav-link">
+                    <span class="nav-icon">🏰</span>
+                    <span>Kingdom View</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">💪</span>
+                    <span>Workouts</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Progress</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🎯</span>
+                    <span>Challenges</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🏛️</span>
+                    <span>Sabha</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span>Army</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-title">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to your Fitness Empire</p>
+                </div>
+                <div class="header-user">
+                    <div class="coin-balance">
+                        <span class="coin-icon">🪙</span>
+                        <span class="coin-amount" id="header-coin-balance">0</span>
+                    </div>
+                    <div class="user-avatar">FM</div>
+                </div>
+            </header>
+            
+            <section class="welcome-section">
+                <div class="welcome-content">
+                    <h2 id="welcome-greeting">Welcome, Warrior!</h2>
+                    <p>Build your empire through consistent exercise. Every workout strengthens your kingdom and earns you rewards!</p>
+                </div>
+            </section>
+            
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon coins">🪙</div>
+                    <div class="stat-info">
+                        <p class="stat-label">FM Coins</p>
+                        <p class="stat-value" id="stat-coins">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon strength">💪</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Warrior Strength</p>
+                        <p class="stat-value" id="stat-strength">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon workouts">🏋️</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Total Workouts</p>
+                        <p class="stat-value" id="stat-workouts">0</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon level">👑</div>
+                    <div class="stat-info">
+                        <p class="stat-label">Kingdom Level</p>
+                        <p class="stat-value" id="stat-level">1</p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="dashboard-grid">
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Recent Activities</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="section-content">
+                        <div id="recent-activities" class="activity-list">
+                            <div class="loading-state">
+                                <div class="loading-spinner"></div>
+                                <p>Loading activities...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h3>Suggested Challenges</h3>
+                        <a href="#" class="section-link">View All</a>
+                    </div>
+                    <div class="section-content">
+                        <div id="suggested-challenges" class="challenge-list">
+                            <div class="loading-state">
+                                <div class="loading-spinner"></div>
+                                <p>Loading challenges...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <section class="kingdom-overview">
+                <div class="kingdom-overview-header">
+                    <h3>Kingdom Overview</h3>
+                </div>
+                <div class="kingdom-stats">
+                    <div class="kingdom-stat">
+                        <span class="kingdom-stat-label">Kingdom Name</span>
+                        <span class="kingdom-stat-value" id="kingdom-name">My Kingdom</span>
+                    </div>
+                    <div class="kingdom-stat">
+                        <span class="kingdom-stat-label">Kingdom Level</span>
+                        <span class="kingdom-stat-value" id="kingdom-level">1</span>
+                    </div>
+                    <div class="kingdom-stat">
+                        <span class="kingdom-stat-label">Building Count</span>
+                        <span class="kingdom-stat-value" id="building-count">0</span>
+                    </div>
+                    <div class="kingdom-stat">
+                        <span class="kingdom-stat-label">Territory Count</span>
+                        <span class="kingdom-stat-value" id="territory-count">0</span>
+                    </div>
+                </div>
+                <div class="kingdom-actions">
+                    <a href="pages/kingdom-map.html" class="btn btn-primary">🗺️ Explore Map</a>
+                    <a href="pages/kingdom-view.html" class="btn btn-secondary">🏰 Manage Kingdom</a>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="js/app.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/shared-ui.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

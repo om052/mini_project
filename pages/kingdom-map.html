@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Messer - Kingdom Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages/map.css">
+</head>
+<body>
+    <div class="map-layout">
+        <aside class="map-sidebar">
+            <div class="sidebar-logo">
+                <h2>Fitness Messer</h2>
+                <p>Let's Build Empire With Exercise</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="kingdom-map.html" class="nav-link active">
+                    <span class="nav-icon">🗺️</span>
+                    <span>Kingdom Map</span>
+                </a>
+                <a href="kingdom-view.html" class="nav-link">
+                    <span class="nav-icon">🏰</span>
+                    <span>Kingdom View</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">💪</span>
+                    <span>Workouts</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Progress</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🎯</span>
+                    <span>Challenges</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🏛️</span>
+                    <span>Sabha</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span>Army</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <main class="map-main">
+            <header class="map-header">
+                <h1>Kingdom Map</h1>
+                <p>Explore and claim territories for your expanding empire</p>
+            </header>
+            
+            <div class="map-container">
+                <section class="map-canvas">
+                    <div class="map-background"></div>
+                    <h2 class="map-title">⚔️ Fitness Messer Realm ⚔️</h2>
+                    <div class="territories-grid" id="territories-grid">
+                        <!-- Territories will be populated by JavaScript -->
+                    </div>
+                </section>
+                
+                <aside class="territory-details">
+                    <div class="details-header">
+                        <h3 id="selected-territory-name">Select a Territory</h3>
+                        <span class="demo-badge">Demo Data</span>
+                    </div>
+                    <div class="details-content" id="territory-details-content">
+                        <p style="color: var(--text-secondary); text-align: center;">Click on a territory marker to view details</p>
+                    </div>
+                    <div class="details-actions">
+                        <button class="btn-action btn-inspect" id="btn-inspect" disabled>🔍 Inspect</button>
+                        <button class="btn-action btn-visit" id="btn-visit" disabled>👁️ Visit</button>
+                        <button class="btn-action btn-join" id="btn-join" disabled>🏴 Join Territory</button>
+                    </div>
+                    <div id="transaction-feedback" class="transaction-feedback" style="display: none;"></div>
+                </aside>
+            </div>
+            
+            <div class="demo-notice">
+                ⚠️ This is simulated territory data for demonstration purposes
+            </div>
+        </main>
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/shared-ui.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/pages/map.js"></script>
+</body>
+</html>

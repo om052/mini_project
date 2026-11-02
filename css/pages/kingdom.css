@@ -1,0 +1,336 @@
+/* Fitness Messer - Kingdom View Page Styles */
+@import url('../global.css');
+
+.kingdom-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: var(--bg-primary, #0a0e27);
+}
+
+.kingdom-sidebar {
+  background: var(--bg-panel, #11142a);
+  border-right: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-lg, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl, 2rem);
+}
+
+.kingdom-main {
+  padding: var(--space-xl, 2rem);
+  overflow-x: auto;
+}
+
+.kingdom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl, 2rem);
+  flex-wrap: wrap;
+  gap: var(--space-md, 1rem);
+}
+
+.kingdom-header-info h1 {
+  color: var(--text-primary, #ffffff);
+  font-size: 2rem;
+  margin: 0 0 var(--space-xs, 0.5rem) 0;
+  font-family: 'Cinzel', serif;
+}
+
+.kingdom-header-info p {
+  color: var(--text-secondary, #a0a0a0);
+  margin: 0;
+}
+
+.kingdom-coin-balance {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs, 0.5rem);
+  background: var(--bg-panel, #11142a);
+  padding: var(--space-xs, 0.5rem) var(--space-md, 1rem);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--accent-gold, #d4af37);
+}
+
+.coin-icon {
+  color: var(--accent-gold, #d4af37);
+  font-size: 1.25rem;
+}
+
+.coin-amount {
+  color: var(--accent-gold, #d4af37);
+  font-weight: 600;
+}
+
+.kingdom-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md, 1rem);
+  margin-bottom: var(--space-xl, 2rem);
+}
+
+.kingdom-stat-card {
+  background: var(--bg-panel, #11142a);
+  padding: var(--space-md, 1rem);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--border-color, #1a1f3a);
+  text-align: center;
+}
+
+.kingdom-stat-label {
+  color: var(--text-secondary, #a0a0a0);
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: var(--space-xs, 0.25rem);
+}
+
+.kingdom-stat-value {
+  color: var(--text-primary, #ffffff);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.kingdom-view-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl, 2rem);
+}
+
+.kingdom-scene {
+  background: linear-gradient(135deg, #0a1428 0%, #0a0e27 100%);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-xl, 2rem);
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.kingdom-scene-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 70% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.kingdom-scene-title {
+  text-align: center;
+  color: var(--accent-gold, #d4af37);
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xl, 2rem);
+  position: relative;
+  z-index: 1;
+}
+
+.isometric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md, 1rem);
+  position: relative;
+  z-index: 1;
+  transform: perspective(1000px) rotateX(15deg);
+}
+
+.building-plot {
+  background: rgba(17, 20, 42, 0.8);
+  border: 2px solid var(--border-color, #1a1f3a);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--space-md, 1rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs, 0.5rem);
+}
+
+.building-plot:hover {
+  border-color: var(--accent-cyan, #00d4ff);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 212, 255, 0.3);
+}
+
+.building-plot.selected {
+  border-color: var(--accent-gold, #d4af37);
+  background: rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+}
+
+.building-icon {
+  font-size: 2rem;
+  display: block;
+}
+
+.building-name {
+  color: var(--text-primary, #ffffff);
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.building-level {
+  color: var(--accent-gold, #d4af37);
+  font-size: 0.7rem;
+  background: rgba(212, 175, 55, 0.2);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.building-details-panel {
+  background: var(--bg-panel, #11142a);
+  border-radius: var(--radius-lg, 12px);
+  border: 1px solid var(--border-color, #1a1f3a);
+  padding: var(--space-lg, 1.5rem);
+}
+
+.panel-header {
+  margin-bottom: var(--space-lg, 1.5rem);
+  padding-bottom: var(--space-md, 1rem);
+  border-bottom: 1px solid var(--border-color, #1a1f3a);
+}
+
+.panel-header h3 {
+  color: var(--accent-gold, #d4af37);
+  margin: 0 0 var(--space-xs, 0.5rem) 0;
+  font-family: 'Cinzel', serif;
+}
+
+.panel-header p {
+  color: var(--text-secondary, #a0a0a0);
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 1rem);
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm, 0.75rem);
+  background: var(--bg-secondary, #0f1328);
+  border-radius: var(--radius-md, 8px);
+}
+
+.panel-label {
+  color: var(--text-secondary, #a0a0a0);
+}
+
+.panel-value {
+  color: var(--text-primary, #ffffff);
+  font-weight: 500;
+}
+
+.upgrade-section {
+  margin-top: var(--space-lg, 1.5rem);
+  padding-top: var(--space-lg, 1.5rem);
+  border-top: 1px solid var(--border-color, #1a1f3a);
+}
+
+.upgrade-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs, 0.5rem);
+  margin-bottom: var(--space-md, 1rem);
+  padding: var(--space-sm, 0.75rem);
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: var(--radius-md, 8px);
+  border: 1px solid var(--accent-gold, #d4af37);
+}
+
+.upgrade-cost-icon {
+  color: var(--accent-gold, #d4af37);
+}
+
+.upgrade-cost-amount {
+  color: var(--accent-gold, #d4af37);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.btn-upgrade {
+  width: 100%;
+  padding: var(--space-sm, 0.75rem);
+  background: linear-gradient(135deg, var(--accent-gold, #d4af37), #b8860b);
+  color: var(--bg-primary, #0a0e27);
+  border: none;
+  border-radius: var(--radius-md, 8px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-upgrade:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-upgrade:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.transaction-feedback {
+  margin-top: var(--space-md, 1rem);
+  padding: var(--space-sm, 0.75rem);
+  border-radius: var(--radius-md, 8px);
+  text-align: center;
+  font-weight: 500;
+}
+
+.feedback-success {
+  background: rgba(0, 255, 128, 0.2);
+  color: var(--fitness-green, #00ff88);
+  border: 1px solid var(--fitness-green, #00ff88);
+}
+
+.feedback-error {
+  background: rgba(255, 69, 58, 0.2);
+  color: #ff453a;
+  border: 1px solid #ff453a;
+}
+
+@media (max-width: 968px) {
+  .kingdom-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .kingdom-sidebar {
+    display: none;
+  }
+  
+  .kingdom-view-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .isometric-grid {
+    grid-template-columns: repeat(2, 1fr);
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .kingdom-main {
+    padding: var(--space-md, 1rem);
+  }
+  
+  .isometric-grid {
+    grid-template-columns: 1fr;
+  }
+}

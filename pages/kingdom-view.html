@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Messer - Kingdom View</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/pages/kingdom.css">
+</head>
+<body>
+    <div class="kingdom-layout">
+        <aside class="kingdom-sidebar">
+            <div class="sidebar-logo">
+                <h2>Fitness Messer</h2>
+                <p>Let's Build Empire With Exercise</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="kingdom-map.html" class="nav-link">
+                    <span class="nav-icon">🗺️</span>
+                    <span>Kingdom Map</span>
+                </a>
+                <a href="kingdom-view.html" class="nav-link active">
+                    <span class="nav-icon">🏰</span>
+                    <span>Kingdom View</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">💪</span>
+                    <span>Workouts</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>Progress</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🎯</span>
+                    <span>Challenges</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">🏛️</span>
+                    <span>Sabha</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚔️</span>
+                    <span>Army</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </a>
+                <a href="#" class="nav-link">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        
+        <main class="kingdom-main">
+            <header class="kingdom-header">
+                <div class="kingdom-header-info">
+                    <h1>Kingdom View</h1>
+                    <p>Manage your buildings and strengthen your empire</p>
+                </div>
+                <div class="kingdom-coin-balance">
+                    <span class="coin-icon">🪙</span>
+                    <span class="coin-amount" id="kingdom-coin-balance">0</span>
+                </div>
+            </header>
+            
+            <div class="kingdom-stats-bar">
+                <div class="kingdom-stat-card">
+                    <span class="kingdom-stat-label">Kingdom Level</span>
+                    <span class="kingdom-stat-value" id="kv-kingdom-level">1</span>
+                </div>
+                <div class="kingdom-stat-card">
+                    <span class="kingdom-stat-label">Buildings</span>
+                    <span class="kingdom-stat-value" id="kv-building-count">0</span>
+                </div>
+                <div class="kingdom-stat-card">
+                    <span class="kingdom-stat-label">Total Upgrades</span>
+                    <span class="kingdom-stat-value" id="kv-total-upgrades">0</span>
+                </div>
+                <div class="kingdom-stat-card">
+                    <span class="kingdom-stat-label">Territories</span>
+                    <span class="kingdom-stat-value" id="kv-territory-count">0</span>
+                </div>
+            </div>
+            
+            <div class="kingdom-view-container">
+                <section class="kingdom-scene">
+                    <div class="kingdom-scene-bg"></div>
+                    <h2 class="kingdom-scene-title">🏰 Your Kingdom 🏰</h2>
+                    <div class="isometric-grid" id="buildings-grid">
+                        <!-- Buildings will be populated by JavaScript -->
+                    </div>
+                </section>
+                
+                <aside class="building-details-panel">
+                    <div class="panel-header">
+                        <h3 id="selected-building-name">Select a Building</h3>
+                        <p id="selected-building-desc">Click on a building to view details and upgrade options</p>
+                    </div>
+                    <div class="panel-content" id="building-details-content">
+                        <p style="color: var(--text-secondary); text-align: center;">No building selected</p>
+                    </div>
+                    <div class="upgrade-section" id="upgrade-section" style="display: none;">
+                        <div class="upgrade-cost">
+                            <span class="upgrade-cost-icon">🪙</span>
+                            <span class="upgrade-cost-amount" id="upgrade-cost">0</span>
+                            <span style="color: var(--text-secondary);">FM Coins</span>
+                        </div>
+                        <button class="btn-upgrade" id="btn-upgrade">⬆️ Upgrade Building</button>
+                    </div>
+                    <div id="kingdom-transaction-feedback" class="transaction-feedback" style="display: none;"></div>
+                </aside>
+            </div>
+        </main>
+    </div>
+    
+    <script src="../js/app.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/shared-ui.js"></script>
+    <script src="../js/data.js"></script>
+    <script src="../js/pages/kingdom.js"></script>
+</body>
+</html>
