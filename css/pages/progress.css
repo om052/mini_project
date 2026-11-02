@@ -1,0 +1,118 @@
+﻿/* Progress Page Styles */
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-info .stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.stat-info .stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat-value.green {
+  color: var(--green);
+}
+
+.week-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  padding: 1rem 0;
+}
+
+.week-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.bar {
+  width: 40px;
+  background: linear-gradient(180deg, var(--cyan) 0%, var(--blue) 100%);
+  border-radius: 4px 4px 0 0;
+  min-height: 20px;
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.bar-count {
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.exercise-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.exercise-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+}
+
+.exercise-name {
+  font-weight: 500;
+}
+
+.exercise-count {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.achievement {
+  padding: 0.7rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  border-left: 3px solid var(--green);
+}
+
+.achievement.locked {
+  opacity: 0.5;
+  border-left-color: var(--border-color);
+}
+
+@media (max-width: 968px) {
+  .week-chart {
+    height: 150px;
+  }
+  
+  .bar {
+    width: 30px;
+  }
+}

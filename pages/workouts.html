@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>Workouts - Fitness Messer</title>
+  <link rel=\"stylesheet\" href=\"../css/global.css\">
+  <link rel=\"stylesheet\" href=\"../css/layout.css\">
+  <link rel=\"stylesheet\" href=\"../css/components.css\">
+  <link rel=\"stylesheet\" href=\"../css/pages/workouts.css\">
+</head>
+<body>
+  <div id=\"app\">
+    <main class=\"main-content\">
+      <header class=\"page-header\">
+        <h1>⚔️ Workouts</h1>
+        <p>Train hard, earn FM Coins, increase your strength</p>
+      </header>
+
+      <div class=\"grid grid-2\">
+        <section class=\"card\">
+          <div class=\"card-header\">
+            <h2>Record Workout</h2>
+          </div>
+          <div class=\"form-group\">
+            <label for=\"exerciseSelect\">Select Exercise</label>
+            <select id=\"exerciseSelect\"></select>
+          </div>
+          <div class=\"form-group\">
+            <label for=\"quantityInput\" id=\"quantityLabel\">Quantity</label>
+            <input type=\"number\" id=\"quantityInput\" placeholder=\"Enter amount\" min=\"1\">
+          </div>
+          <button id=\"recordBtn\" class=\"btn btn-primary\">Record Workout (Demo)</button>
+          <div id=\"workoutMsg\" class=\"alert\" style=\"display:none; margin-top:1rem;\"></div>
+          <div class=\"reward-preview\" style=\"margin-top:1rem;\">
+            <span class=\"badge badge-gold\">Estimated Reward: <span id=\"rewardPreview\">0</span> FM Coins</span>
+          </div>
+        </section>
+
+        <section class=\"card\">
+          <div class=\"card-header\">
+            <h2>Quick Stats</h2>
+          </div>
+          <div class=\"stats-grid\">
+            <div class=\"stat-box\">
+              <div class=\"stat-label\">Total Coins</div>
+              <div class=\"stat-value gold\" id=\"totalCoins\">0</div>
+            </div>
+            <div class=\"stat-box\">
+              <div class=\"stat-label\">Workouts</div>
+              <div class=\"stat-value\" id=\"totalWorkouts\">0</div>
+            </div>
+            <div class=\"stat-box\">
+              <div class=\"stat-label\">Total Reps/Qty</div>
+              <div class=\"stat-value\" id=\"totalQty\">0</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class=\"card\">
+        <div class=\"card-header\">
+          <h2>Recent Workout History</h2>
+        </div>
+        <div class=\"history-list\" id=\"historyList\">
+          <p style=\"color: var(--text-secondary);\">No workouts yet. Start training!</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src=\"../js/storage.js\"></script>
+  <script src=\"../js/data.js\"></script>
+  <script src=\"../js/shared-ui.js\"></script>
+  <script src=\"../js/pages/workouts.js\"></script>
+</body>
+</html>

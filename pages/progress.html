@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\">
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+  <title>Progress - Fitness Messer</title>
+  <link rel=\"stylesheet\" href=\"../css/global.css\">
+  <link rel=\"stylesheet\" href=\"../css/layout.css\">
+  <link rel=\"stylesheet\" href=\"../css/components.css\">
+  <link rel=\"stylesheet\" href=\"../css/pages/progress.css\">
+</head>
+<body>
+  <div id=\"app\">
+    <main class=\"main-content\">
+      <header class=\"page-header\">
+        <h1>📊 Progress</h1>
+        <p>Track your fitness journey and gaming progress</p>
+      </header>
+
+      <div class=\"grid grid-4\">
+        <div class=\"card stat-card\">
+          <div class=\"stat-icon\">💰</div>
+          <div class=\"stat-info\">
+            <div class=\"stat-label\">FM Coins</div>
+            <div class=\"stat-value gold\" id=\"pCoins\">0</div>
+          </div>
+        </div>
+        <div class=\"card stat-card\">
+          <div class=\"stat-icon\">🏋️</div>
+          <div class=\"stat-info\">
+            <div class=\"stat-label\">Workouts</div>
+            <div class=\"stat-value\" id=\"pWorkouts\">0</div>
+          </div>
+        </div>
+        <div class=\"card stat-card\">
+          <div class=\"stat-icon\">🔢</div>
+          <div class=\"stat-info\">
+            <div class=\"stat-label\">Total Quantity</div>
+            <div class=\"stat-value\" id=\"pQty\">0</div>
+          </div>
+        </div>
+        <div class=\"card stat-card\">
+          <div class=\"stat-icon\">💪</div>
+          <div class=\"stat-info\">
+            <div class=\"stat-label\">Warrior Strength</div>
+            <div class=\"stat-value green\" id=\"pStrength\">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class=\"grid grid-2\">
+        <section class=\"card\">
+          <div class=\"card-header\">
+            <h2>Weekly Activity</h2>
+          </div>
+          <div class=\"week-chart\" id=\"weekChart\">
+            <p style=\"color: var(--text-secondary);\">No data yet</p>
+          </div>
+        </section>
+
+        <section class=\"card\">
+          <div class=\"card-header\">
+            <h2>Exercise Breakdown</h2>
+          </div>
+          <div class=\"exercise-stats\" id=\"exerciseStats\">
+            <p style=\"color: var(--text-secondary);\">No workouts yet</p>
+          </div>
+        </section>
+      </div>
+
+      <section class=\"card\">
+        <div class=\"card-header\">
+          <h2>Recent Activity</h2>
+        </div>
+        <div id=\"recentActivity\">
+          <p style=\"color: var(--text-secondary);\">Start working out to see your progress!</p>
+        </div>
+      </section>
+
+      <section class=\"card\">
+        <div class=\"card-header\">
+          <h2>Achievements</h2>
+        </div>
+        <div class=\"achievements\" id=\"achievements\">
+          <div class=\"achievement locked\">🎯 First Workout - Complete your first workout</div>
+          <div class=\"achievement locked\">🔥 Consistent - Complete 5 workouts</div>
+          <div class=\"achievement locked\">💪 Warrior - Earn 100 FM Coins</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src=\"../js/storage.js\"></script>
+  <script src=\"../js/data.js\"></script>
+  <script src=\"../js/shared-ui.js\"></script>
+  <script src=\"../js/pages/progress.js\"></script>
+</body>
+</html>
